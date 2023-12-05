@@ -11,4 +11,12 @@ level 3: the filename had spaces which need to be escaped as '\ ' . Hence cat sp
 
 level 4: cd-ing into the inhere directory and using ls -a revealed the hidden file :.hidden (. before the name) . Performing cat .hidden yielded : 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
 
+Level 5: cd-ing into inhere and manually checking file ./-file0(0-8) revealed that ./-file07 was of type ASCII Text and contained lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR . (note a bash script will also work , especially for a larger number of files , maybe something like this :
+for f in ./inhere;do
+        if $(file f) == "ASCII text"
+        then
+                cat $f
+done
+)
 
+level 6:
