@@ -22,3 +22,9 @@ done
 level 5-6: this command will do the trick ! : for directory in ./; do echo "$(find $directory -size 1033c ! -executable -exec file {} + | grep "ASCII text")" ; done
 ./ denotes pwd , ! -executable checks if NOT executable , 1033c indicated 1033 bytes , -exec file runs the file command on {} i.e. the placeholder for the file found by find command . grep then filters out lines which do not contain ASCII text , non human readable ones ! 
 This yields : P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+
+level 6-7: running find ./ -type f -user bandit7 -group bandit6 -size 33c after cd .. cd .. to go to the top level directory yielded z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S as the password 
+
+level 7-8 : running cat data.txt | grep 'millionth' yielded TESKZC0XvTetK0S9xNwm25STk5iWrBvP as the password 
+
+level 8-9 : running sort data.txt | uniq -u yielded EN632PlfYiZbn3PhVK3XOGSlNInNE00t
