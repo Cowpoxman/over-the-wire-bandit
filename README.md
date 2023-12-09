@@ -28,3 +28,16 @@ level 6-7: running find ./ -type f -user bandit7 -group bandit6 -size 33c after 
 level 7-8 : running cat data.txt | grep 'millionth' yielded TESKZC0XvTetK0S9xNwm25STk5iWrBvP as the password 
 
 level 8-9 : running sort data.txt | uniq -u yielded EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+
+level 9-10 : running strings data.txt | grep '^==' yielded G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+strings returns human readable strings and using regex and grep we can check if the line starts with (at least) two equal to signs 
+
+level 10-11 : running base64 -d data.txt yeilds "The password is 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM"
+
+level 11-12 : i confess , i found it easier to just cat the file  and paste the output in cyberchef , after applying rot13 . I ended up getting The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+
+level 12-13 : The process was quite annoying , and i know i should have written a script for it , to check the file extensions and chenge the names and so on but it finally yielded this "wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw"
+there were lot of tar compressions (tar -xf filename) and gzips (mv file file.gz followed by gunzip file.gz) and bzip2 files too (mv file file.bz2 bunzip2 file.bz2)
+
+
+
