@@ -50,3 +50,17 @@ level 16-17 : running nmap -sV localhost showed me which ports had ssl connectio
 
 level 17-18 : diff passwords.old passwords.new gave us the line which was changed in between them both 
 hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+
+level 18-19 : i confess i didnt get this one entirely on my own , but it turns out we needed to look at it from the POV that we aren't allowed to ssh into BASH but there are OTHER shells which we can ssh into (using -t flag) ! password was awhqfNnAbc1naukrpqDYcF95h7HoMTrC
+
+level 19-20 : ./bandit20-do cat /etc/bandit_pass/bandit20 allowed us to read this file which only bandit20 has read permissions to 
+password was VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+
+level 20-21 : Here we had to set up our own nc listener which would echo the password back to any connection , then connect through ./suconnect and get the password : NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+
+level 21-22 : poking around in etc/cron.d i saw cronjob_bandit22.sh being run from usr/bin , catting the same showed that it was reading and storing the contents of bandit22_pass (ehich i dont have read permissions for) to /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv which i do have reading permissions for (chmod 644)
+WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff is the password 
+
+level 22-23 : a similar process showed that the filename was the MD5 version of bandit23 (it will be executed as bandit23) . password is QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G
+
+
