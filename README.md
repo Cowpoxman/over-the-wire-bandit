@@ -43,7 +43,10 @@ level 13-14 : "fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq" . We could ssh into bandit 14 u
 
 level 14-15 : performing echo "fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq" | nc localhost 30000 gave us "jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt" as the output !
 
-level 15-16 : we needed to enter an SSL connection with our system localhost 30001 and submit our current password . This can be done like so : open_ssl s_client -ign_eof -connect localhost@30001
+level 15-16 : we needed to enter an SSL connection with our system localhost 30001 and submit our current password . This can be done like so : openssl s_client -ign_eof -connect localhost@30001
 after submitting our password we were presented with "JQttfApK4SeyHwDlI9SXGR50qclOAil1" as our password 
 
-level 16-17 :
+level 16-17 : running nmap -sV localhost showed me which ports had ssl connection (although this was a messy way to do it ) . This was hard to script due to the verbose output of ssl and snce there were only two ports , i did them manually (similar to orev level) and i got the private RSA key 
+
+level 17-18 : diff passwords.old passwords.new gave us the line which was changed in between them both 
+hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
