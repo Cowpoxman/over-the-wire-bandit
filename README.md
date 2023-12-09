@@ -39,5 +39,11 @@ level 11-12 : i confess , i found it easier to just cat the file  and paste the 
 level 12-13 : The process was quite annoying , and i know i should have written a script for it , to check the file extensions and chenge the names and so on but it finally yielded this "wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw"
 there were lot of tar compressions (tar -xf filename) and gzips (mv file file.gz followed by gunzip file.gz) and bzip2 files too (mv file file.bz2 bunzip2 file.bz2)
 
+level 13-14 : "fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq" . We could ssh into bandit 14 using the private key , the command being ssh -i sshkey.private bandit14@localhost -p 2220
 
+level 14-15 : performing echo "fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq" | nc localhost 30000 gave us "jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt" as the output !
 
+level 15-16 : we needed to enter an SSL connection with our system localhost 30001 and submit our current password . This can be done like so : open_ssl s_client -ign_eof -connect localhost@30001
+after submitting our password we were presented with "JQttfApK4SeyHwDlI9SXGR50qclOAil1" as our password 
+
+level 16-17 :
